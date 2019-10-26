@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {Fragment} from 'react'
+import { Search } from '../components/Search'
 
 export const Home = () => {
   
   return (
-    <div>
-      <h1>Home page</h1>
-    </div> 
+    <Fragment>
+      <Search />
+    </Fragment>
   )
 }
