@@ -6,7 +6,7 @@ export const Search = () => {
   
   const [value, setValue] = useState('')
 
-  const {show} = useContext(AlertContext)
+  const alert = useContext(AlertContext)
   const github = useContext(GithubContext)
 
   const onSubmit = event => {
@@ -14,10 +14,13 @@ export const Search = () => {
       return
     }
 
+    github.clearUsers()
+
     if (value.trim()) {
+      alert.hide()
       github.search(value.trim())
     } else {
-      show('Enter user nickname')
+      alert.show('Enter user nickname')
     }
   }
 
